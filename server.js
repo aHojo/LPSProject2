@@ -7,11 +7,13 @@ var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
-
+const htmlRoute = require("./routes/htmlRoutes.js");
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
+
+
 
 // Handlebars
 app.engine(
@@ -22,9 +24,8 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+//Routes
+app.use("/", htmlRoute);
 
 var syncOptions = { force: false };
 
@@ -34,7 +35,7 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-// Starting the server, syncing our models ------------------------------------/
+//Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
     console.log(
@@ -45,4 +46,3 @@ db.sequelize.sync(syncOptions).then(function() {
   });
 });
 
-module.exports = app;
