@@ -4,7 +4,17 @@
 }
 
 body {
-  background: #ffffff;
+  background: linear-gradient(
+    rgba(245, 9, 194, 0.877), 
+    rgba(134, 4, 58, 0.753)),
+    url(../images/pinkclouds.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   font-family: 'Helvetica Neue';
   font-size: 10px;
   color: #ffffff;
@@ -12,16 +22,26 @@ body {
   line-height: 2em;
 }
 
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
 .chat-box {
-  background: linear-gradient(0deg, #752267 00%, #c41f5a 100%);
+  background: linear-gradient(0deg, #c41f59  00%, #ffffff 180%);
   margin: 100px auto;
   max-width: 500px;
-  height: 650px;
+  height: 850px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
   /*border : 1px solid #000;*/
   overflow: hidden;
   position: relative;
   transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+  box-shadow:
+  0 0 30px 15px rgba(255, 255, 255, 0.671),  /* inner white */
+  0 0 60px 20px rgba(255, 0, 255, 0.555), /* middle magenta */
+  0 0 90px 40px rgba(151, 6, 103, 0.678); /* outer cyan */
 }
 
 .chat-container {
@@ -173,7 +193,8 @@ p {
 }
 
 .user-profile:nth-child(1) {
-  background-image: url(http://vignette3.wikia.nocookie.net/fairytail/images/0/02/Mugshot_of_Erza.png/revision/latest?cb=20130509171537);
+  background-image: url(../images/andrew.jpg);
+  background-position: center;
 }
 
 .user-profile:nth-child(3) {
@@ -181,11 +202,13 @@ p {
 }
 
 .user-profile:nth-child(5) {
-  background-image: url(http://vignette3.wikia.nocookie.net/fairytail/images/e/e7/Lucy_prof_2.jpg/revision/latest?cb=20111024225521);
+  background-image: url(../images/mike.jpg);
+  background-position: center;
 }
 
 .user-profile:nth-child(7) {
-  background-image: url(https://i.ytimg.com/vi/sROSCGZq1rA/hqdefault.jpg);
+  background-image: url(../images/zach.jpg);
+  background-position: center;
 }
 
 .user-profile.active {
