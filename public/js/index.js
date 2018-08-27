@@ -5,16 +5,23 @@
                           $('.user-profile.active').removeClass('active');
                           $(this).addClass('active');
                           
-                          var temp =   $('#'+$(this).attr('data-up'));
+                          var temp =   $('#'+$(this).attr('data-name'));
                           
                           hideUI('.chat-container')
-                          showUI('#'+$(this).attr('data-up'));
+                          showUI('#'+$(this).attr('data-name'));
                           temp.addClass('active').removeClass('hidechat');
                           temp.prevAll('.chat-container').addClass('hidechat').removeClass('active');
                           temp.nextAll('.chat-container').removeClass('active').removeClass('hidechat');
                       }
                   });
             showUI('#cont1');
+
+            $('.chat-input').on("keyup", function(event) {
+                if(event.keyCode === 13){
+                    console.log($('.chat-input').val());
+                }
+                
+            });
         });
         
         function showUI(ele){
