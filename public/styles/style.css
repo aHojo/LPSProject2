@@ -24,6 +24,32 @@ body {
 
 /* beginning of landing page image */
 
+.githubportfolio{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    margin-bottom: 1%;
+}
+
 .card {
   height: 100%;
 }
@@ -47,6 +73,8 @@ body {
   padding-right: 20%;
   margin-left: 15%;
   margin-right: 15%;
+  border-radius: 5px;
+  box-shadow: 0 5px 30px rgba(255, 255, 255, 0.1);
 }
 
 .bottombottom{
@@ -58,13 +86,86 @@ body {
   padding-right: 20%;
   margin-left: 15%;
   margin-right: 15%;
+  border-radius: 5px;
+  box-shadow: 0 5px 30px rgba(255, 255, 255, 0.1);
+}
+
+.bottombottomtwo{
+  background-color: rgba(255, 254, 255, 0.575);
+  margin-top: 6.2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 5px;
+  box-shadow: 0 5px 30px rgba(255, 255, 255, 0.1);
 }
 
 /* beginning of chat box styling */
 
+form{
+  margin-left: 16.2%;
+  margin-bottom: 2%;
+  width: 100px;
+  width: 20%;
+}
+
+#ezchat{
+
+}
+
+.col{
+}
+
+.input-group.mb-3{
+  width: 20%;
+  margin-left: 15%;
+}
+
+.custom-select{
+  width: 111%;
+  color: #ff4081;
+}
+
+.submit{
+  margin-left: 15%;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    margin-bottom: 1%;
+}
+
+
+
+.btn.btn-primary{
+  margin-bottom: 1%;
+}
+
+
 .row.text-center{
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 img.center {
@@ -74,8 +175,8 @@ img.center {
   }
 
 .chat-box {
+  margin-left: 50%;
   background: linear-gradient(0deg, #c41f59  00%, #ffffff 180%);
-  margin: 100px auto;
   max-width: 500px;
   height: 850px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
@@ -349,6 +450,12 @@ a {
   box-sizing: border-box;
   font-size: 20px;
   text-align: left;
+}
+
+.menu.chat {
+}
+
+.menu.home {
 }
 
 .menu-item:hover {
