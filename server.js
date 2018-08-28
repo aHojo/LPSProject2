@@ -7,7 +7,7 @@ var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
-const htmlRoute = require("./routes/htmlRoutes.js");
+
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -25,7 +25,10 @@ app.engine(
 app.set("view engine", "handlebars");
 
 //Routes
+const htmlRoute = require("./routes/htmlRoutes.js");
+const apiRoute = require("./routes/apiRoutes.js");
 app.use("/", htmlRoute);
+app.use("/api", apiRoute);
 
 var syncOptions = { force: false };
 
