@@ -9,26 +9,17 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var PORT = process.env.PORT || 3000;
 
+//Route Files
+const htmlRoute = require("./routes/htmlRoutes.js");
+const apiRoute = require("./routes/apiRoutes.js")(io);
+
 // Middleware
+app.disable('etag');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static("public"));
 
 
 
-// Handlebars
-// app.engine(
-//   "handlebars",
-//   exphbs({
-//     defaultLayout: "main"
-//   })
-// );
-// app.set("view engine", "handlebars");
-// const socket = require("socket.io");
-
-// var io = socket(server);
-
-// Set socket.io listeners.
 io.on('connection', function (socket) {
   console.log('a user connected');
 
@@ -38,10 +29,10 @@ io.on('connection', function (socket) {
 });
 
 //Routes
-const htmlRoute = require("./routes/htmlRoutes.js");
-const apiRoute = require("./routes/apiRoutes.js")(io);
 app.use("/", htmlRoute);
 app.use("/api", apiRoute);
+
+app.use(express.static("public"));
 
 var syncOptions = { force: false };
 
