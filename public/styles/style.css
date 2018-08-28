@@ -105,35 +105,29 @@ body {
 
 /* beginning of chat box styling */
 
-form{
-  margin-left: 16.2%;
-  margin-bottom: 2%;
-  width: 100px;
-  width: 20%;
+.row {
+  margin-right: 2px;
+  margin-left: 2px;
 }
 
-#ezchat{
-
-}
-
-.col{
+#formblock{
+  float: left;
+  margin-left: 15%;
+  width: 300px;
+  display: inline-block;
 }
 
 .input-group.mb-3{
-  width: 20%;
-  margin-left: 15%;
 }
 
 .custom-select{
-  width: 111%;
+  width: 115%;
   color: #ff4081;
 }
 
 .submit{
-  margin-left: 15%;
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -154,9 +148,8 @@ form{
     background-color: #337ab7;
     border-color: #2e6da4;
     margin-bottom: 1%;
+    margin-top: 3%;
 }
-
-
 
 .btn.btn-primary{
   margin-bottom: 1%;
@@ -175,6 +168,7 @@ img.center {
   }
 
 .chat-box {
+  border-radius: 5px;
   margin-left: 50%;
   background: linear-gradient(0deg, #c41f59  00%, #ffffff 180%);
   max-width: 500px;
@@ -344,7 +338,8 @@ p {
 }
 
 .user-profile:nth-child(3) {
-  background-image: url(http://orig15.deviantart.net/8172/f/2016/079/7/2/natsu_xabused_reader_fire_within_the_heart_p1_by_minnibellsnow-d9vv2cy.jpg);
+  background-image: url(../images/Han.jpg);
+  background-position: center;
 }
 
 .user-profile:nth-child(5) {
