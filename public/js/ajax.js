@@ -1,4 +1,5 @@
 var socket = io();
+// io.connect('http://c98a1cd3.ngrok.io');
 $(document).ready(function(){
 
     $('.chat-input').on("keyup", function(event) {
@@ -32,33 +33,23 @@ $(document).ready(function(){
             });
 
          }
-
-         socket.on('call progress event', function(call) {
-             console.log(call);
-         });
-
-
         
     });
-    
-    // $.ajax({
-    //     url:"/api/sms",
-    //     type: "POST",
-    // }).then(function(data) {
-    //     console.log(data);
-    //     // var newMessage = $(".chat-container.active");
-    //     // var newDiv = $('<div class="bubble">')
-    //     // var message = $("<p>")
-    //     // var timeMessage = $("<p>");
-    //     // timeMessage.addClass("datestamp").text(data.time);
-    //     // message.text(data.message);
-    //     // newDiv.append(message);
-    //     // newMessage.append(newDiv).append(timeMessage);
-    //     // console.log(newMessage);
 
-    //     // showUI(newMessage);
+    socket.on('text', function(call) {
+        console.log(call.messageBody);
+        console.log(call.from);
+        // var newMessage = $(".chat-container.active");
+        // var newDiv = $('<div class="bubble">')
+        // var message = $("<p>")
+        // var timeMessage = $("<p>");
+        // timeMessage.addClass("datestamp").text(data.time);
+        // message.text(data.message);
+        // newDiv.append(message);
+        // newMessage.append(newDiv).append(timeMessage);
 
-    // });
+        // showUI(newMessage);
+    });
     
 });
 

@@ -1,26 +1,31 @@
 var db = require("../models");
 var express = require("express");
 var router = express.Router();
+const twilio = require('twilio');
 
+var returnRouter = function(io){
+  router
+    .post("/sendMessage", function(req, res) {
+      var message = req.body
 
-router
-  .post("/sendMessage", function(req, res) {
-    var message = req.body
+      console.log(message);
+      res.json(message);
+    })
+    .post("/sms", function(req,res) {
+      console.log(req.body);
+      var messageBody = req.body.Body;
+      var from = req.body.From;
+      console.log(messageBody);
+      io.emit('text', {messageBody, from});
+      res.send('Event received');
+    //   const twiml = new MessagingResponse();
 
-    console.log(message);
-    res.json(message);
-  })
-  .post("/sms", function(req,res) {
-    console.log(req.body);
+    // twiml.message('The Robots are coming! Head for the hills!');
 
-    io.emit('call progress event', req.body);
-    res.send('Event received');
-  //   const twiml = new MessagingResponse();
+    // res.writeHead(200, {'Content-Type': 'text/xml'});
+    // res.end(twiml.toString());
+    });
 
-  // twiml.message('The Robots are coming! Head for the hills!');
-
-  // res.writeHead(200, {'Content-Type': 'text/xml'});
-  // res.end(twiml.toString());
-  });
-
-module.exports = router;
+    return router;
+}
+module.exports = returnRouter;
