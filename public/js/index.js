@@ -14,14 +14,6 @@
                           temp.nextAll('.chat-container').removeClass('active').removeClass('hidechat');
                       }
                   });
-            showUI('#cont1');
-
-            $('.chat-input').on("keyup", function(event) {
-                if(event.keyCode === 13){
-                    console.log($('.chat-input').val());
-                }
-                
-            });
         });
         
         function showUI(ele){
