@@ -1,24 +1,31 @@
 var db = require("../models");
+var express = require("express");
+var router = express.Router();
+const twilio = require('twilio');
 
-module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
-  });
+var returnRouter = function(io){
+  router
+    .post("/sendMessage", function(req, res) {
+      var message = req.body
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
+      console.log(message);
+      res.json(message);
+    })
+    .post("/sms", function(req,res) {
+      console.log(req.body);
+      var messageBody = req.body.Body;
+      var from = req.body.From;
+      console.log(messageBody);
+      io.emit('text', {messageBody, from});
+      res.send('Event received');
+    //   const twiml = new MessagingResponse();
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+    // twiml.message('The Robots are coming! Head for the hills!');
+
+    // res.writeHead(200, {'Content-Type': 'text/xml'});
+    // res.end(twiml.toString());
     });
-  });
-};
+
+    return router;
+}
+module.exports = returnRouter;

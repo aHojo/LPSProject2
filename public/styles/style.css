@@ -255,6 +255,7 @@ p {
 
 .datestamp {
   display: block;
+  clear: both;
   text-align: center;
   margin-bottom: 30px;
   color: #ffffff;
@@ -264,6 +265,7 @@ p {
 
 .dt-alt {
   float: right;
+  clear: both;
 }
 
 .chat-control {

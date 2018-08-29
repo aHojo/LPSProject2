@@ -1,38 +1,46 @@
 require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
-// var exphbs = require("express-handlebars");
+var exphbs = require("express-handlebars");
+
 var db = require("./models");
 
 var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
 var PORT = process.env.PORT || 3000;
 
-//Route Files
-const htmlRoute = require("./routes/htmlRoutes.js");
-const apiRoute = require("./routes/apiRoutes.js")(io);
-
 // Middleware
-app.disable('etag');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static("public"));
 
 
 
-io.on('connection', function (socket) {
-  console.log('a user connected');
-
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-});
+// Handlebars
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
+app.set("view engine", "handlebars");
 
 //Routes
+app.post("/api/sms", function(req,res) {
+    console.log(req.body);
+
+    io.emit('call progress event', req.body);
+    res.send('Event received');
+  //   const twiml = new MessagingResponse();
+
+  // twiml.message('The Robots are coming! Head for the hills!');
+
+  // res.writeHead(200, {'Content-Type': 'text/xml'});
+  // res.end(twiml.toString());
+  });
+const htmlRoute = require("./routes/htmlRoutes.js");
+const apiRoute = require("./routes/apiRoutes.js");
 app.use("/", htmlRoute);
 app.use("/api", apiRoute);
-
-app.use(express.static("public"));
 
 var syncOptions = { force: false };
 
@@ -44,7 +52,7 @@ if (process.env.NODE_ENV === "test") {
 
 //Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
-  http.listen(PORT, function() {
+  app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
@@ -52,7 +60,4 @@ db.sequelize.sync(syncOptions).then(function() {
     );
   });
 });
-
-
-
 
