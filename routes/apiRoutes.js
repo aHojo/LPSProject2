@@ -7,7 +7,8 @@ var returnRouter = function(io){
   router
     .post("/sendMessage", function(req, res) {
       var message = req.body
-
+      var name = req.body.name;
+      console.log(name);
       console.log(message);
       res.json(message);
     })
