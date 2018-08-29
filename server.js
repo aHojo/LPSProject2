@@ -10,8 +10,8 @@ var io = require('socket.io')(http);
 var PORT = process.env.PORT || 3000;
 
 //Route Files
-const htmlRoute = require("./routes/htmlRoutes.js");
-const apiRoute = require("./routes/apiRoutes.js")(io);
+var htmlRoute = require("./routes/htmlRoutes.js");
+var apiRoute = require("./routes/apiRoutes.js")(io);
 
 // Middleware
 app.disable('etag');

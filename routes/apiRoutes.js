@@ -1,7 +1,7 @@
 var db = require("../models");
 var express = require("express");
 var router = express.Router();
-const twilio = require('twilio');
+var twilio = require('twilio');
 
 var returnRouter = function(io){
   router
@@ -19,12 +19,6 @@ var returnRouter = function(io){
       console.log(messageBody);
       io.emit('text', {messageBody, from});
       res.send('Event received');
-    //   const twiml = new MessagingResponse();
-
-    // twiml.message('The Robots are coming! Head for the hills!');
-
-    // res.writeHead(200, {'Content-Type': 'text/xml'});
-    // res.end(twiml.toString());
     });
 
     return router;
