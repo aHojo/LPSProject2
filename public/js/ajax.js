@@ -8,7 +8,8 @@ $(document).ready(function(){
 
             var messageObj = {
                 "message": $('.chat-input').val(),
-                "time": d.toDateString()
+                "time": d.toDateString(),
+                "name": $(".user-profile.active").attr("data-name")
             };
 
             $('.chat-input').val("");
