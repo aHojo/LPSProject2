@@ -3,35 +3,28 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>| Ez Talk</title>
-
+  <title>| Ez Talk Messaging</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-
-  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="styles/style.css">
   <!-- Shortcut Icon-->
   <link rel="shortcut icon" type="img/png" href="images/browsertablogo.png">
-
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
 
 </head>
 
+<style>
+  body {
+    background-color: #c41f59;
+  }
+</style>
+
 <body>
 
-  <section id="ezchat">
-  <div class="chat-box">
-      <img src="images/EZ-Talk-Logo-After-Effects-Ready.gif" class="center" width="200px" height="200px">
-    <div class="chat-header">
-      <div class="user-profile" data-name='cont1'></div>
-      <span>Andrew</span>
-      <div class="user-profile" data-name='cont2'></div>
-      <span>Han</span>
-      <div class="user-profile" data-name='cont3'></div>
-      <span>Mike</span>
-      <div class="user-profile" data-name='cont4'></div>
-      <span>Zach</span>
-    </div>
-    <div id='chat' class="chat">
+  <div class="toptop">
+    <img src="images/EZ-Talk-Logo-After-Effects-Ready.gif" class="center" width="200px" height="200px">
+  </div>
 
   <div id="formblock">
 
@@ -70,57 +63,20 @@
         <span>Mike</span>
         <div class="user-profile" data-up='cont4'></div>
         <span>Zach</span>
-
-      <div class="chat-container" id='cont1'>
-
-        <div class="bubble">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut sapien vitae eros consectetur vehicula lacinia
-            at nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum aliquet elit nec erat rutrum
-            rutrum. Mauris ligula magna, dignissim id tortor eu, aliquet dapibus ipsum</p>
-        </div>
-        <span class="datestamp">May 20, 2016, 4:16 PM</span>
-
-
-        <div class="bubble bubble-alt">
-          <p>Aenean ac magna rutrum, finibus est at, venenatis ipsum. Etiam egestas venenatis semper. Sed a neque sed sem lacinia
-            finibus ac nec nisi.</p>
-        </div>
-        <span class="datestamp  dt-alt">May 20, 2016, 4:17 PM</span>
-
-
-        <div class="bubble">
-          <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut facilisis justo in nisl elementum, at fermentum
-            augue tempor. </p>
-        </div>
-
-        <div class="bubble">
-          <p>Aliquam feugiat tortor ac massa commodo convallis sit amet ultricies urna. Sed pharetra augue ac sapien varius,
-            at vulputate velit pretium.</p>
-        </div>
-        <span class="datestamp">May 20, 2016, 4:20 PM</span>
-
-        <div class="bubble bubble-alt">
-          <p>Quisque sit amet nulla nibh. Mauris eu lacus sed orci rhoncus cursus nec et enim. Phasellus finibus luctus mi ac
-            sodales. Integer efficitur gravida mauris in eleifend. Maecenas ac interdum mi.</p>
-        </div>
-        <span class="datestamp  dt-alt">May 20, 2016, 4:22 PM</span>
       </div>
+      <div id='chat' class="chat">
 
-      <div class="chat-container" id='cont2'>
+        <div class="chat-container active" id='cont1'>
 
-        <div class="bubble">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut sapien vitae eros consectetur vehicula lacinia
-            at nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum aliquet elit nec erat rutrum
-            rutrum. Mauris ligula magna, dignissim id tortor eu, aliquet dapibus ipsum</p>
-        </div>
-        <span class="datestamp">May 20, 2016, 4:16 PM</span>
+          <div class="bubble">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut sapien vitae eros consectetur
+              vehicula lacinia
+              at nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum aliquet elit nec erat
+              rutrum
+              rutrum. Mauris ligula magna, dignissim id tortor eu, aliquet dapibus ipsum</p>
+          </div>
+          <span class="datestamp">May 20, 2016, 4:16 PM</span>
 
-        
-        <div class="bubble bubble-alt">
-          <p>Aenean ac magna rutrum, finibus est at, venenatis ipsum. Etiam egestas venenatis semper. Sed a neque sed sem lacinia
-            finibus ac nec nisi.</p>
-        </div>
-        <span class="datestamp  dt-alt">May 20, 2016, 4:17 PM</span>
 
           <div class="bubble bubble-alt">
             <p>Aenean ac magna rutrum, finibus est at, venenatis ipsum. Etiam egestas venenatis semper. Sed a neque sed
@@ -129,10 +85,6 @@
           </div>
           <span class="datestamp  dt-alt">May 20, 2016, 4:17 PM</span>
 
-        <div class="bubble">
-          <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut facilisis justo in nisl elementum, at fermentum
-            augue tempor. </p>
-        </div>
 
           <div class="bubble">
             <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut facilisis justo in nisl elementum, at
@@ -153,33 +105,9 @@
               ac sodales. Integer efficitur gravida mauris in eleifend. Maecenas ac interdum mi.</p>
           </div>
           <span class="datestamp  dt-alt">May 20, 2016, 4:22 PM</span>
-
-        <div class="bubble">
-          <p>Aliquam feugiat tortor ac massa commodo convallis sit amet ultricies urna. Sed pharetra augue ac sapien varius,
-            at vulputate velit pretium.</p>
         </div>
-        <span class="datestamp">May 20, 2016, 4:20 PM</span>
 
-        <div class="bubble bubble-alt">
-          <p>Quisque sit amet nulla nibh. Mauris eu lacus sed orci rhoncus cursus nec et enim. Phasellus finibus luctus mi ac
-            sodales. Integer efficitur gravida mauris in eleifend. Maecenas ac interdum mi.</p>
-        </div>
-        <span class="datestamp  dt-alt">May 20, 2016, 4:22 PM</span>
-      </div>
-      <div class="chat-container" id='cont3'>
-        <div class="bubble">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut sapien vitae eros consectetur vehicula lacinia
-            at nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum aliquet elit nec erat rutrum
-            rutrum. Mauris ligula magna, dignissim id tortor eu, aliquet dapibus ipsum</p>
-        </div>
-        <span class="datestamp">May 20, 2016, 4:16 PM</span>
-
-
-        <div class="bubble bubble-alt">
-          <p>Aenean ac magna rutrum, finibus est at, venenatis ipsum. Etiam egestas venenatis semper. Sed a neque sed sem lacinia
-            finibus ac nec nisi.</p>
-        </div>
-        <span class="datestamp  dt-alt">May 20, 2016, 4:17 PM</span>
+        <div class="chat-container" id='cont2'>
 
           <div class="bubble">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut sapien vitae eros consectetur
@@ -190,17 +118,6 @@
           </div>
           <span class="datestamp">May 20, 2016, 4:16 PM</span>
 
-        <div class="bubble">
-          <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut facilisis justo in nisl elementum, at fermentum
-            augue tempor. </p>
-        </div>
-
-
-        <div class="bubble">
-          <p>Aliquam feugiat tortor ac massa commodo convallis sit amet ultricies urna. Sed pharetra augue ac sapien varius,
-            at vulputate velit pretium.</p>
-        </div>
-        <span class="datestamp">May 20, 2016, 4:20 PM</span>
 
           <div class="bubble bubble-alt">
             <p>Aenean ac magna rutrum, finibus est at, venenatis ipsum. Etiam egestas venenatis semper. Sed a neque sed
@@ -307,45 +224,10 @@
               ac sodales. Integer efficitur gravida mauris in eleifend. Maecenas ac interdum mi.</p>
           </div>
           <span class="datestamp  dt-alt">May 20, 2016, 4:22 PM</span>
-
-        <div class="bubble bubble-alt">
-          <p>Quisque sit amet nulla nibh. Mauris eu lacus sed orci rhoncus cursus nec et enim. Phasellus finibus luctus mi ac
-            sodales. Integer efficitur gravida mauris in eleifend. Maecenas ac interdum mi.</p>
         </div>
-        <span class="datestamp  dt-alt">May 20, 2016, 4:22 PM</span>
       </div>
-      <div class="chat-container" id='cont4'>
-        <div class="bubble">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut sapien vitae eros consectetur vehicula lacinia
-            at nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum aliquet elit nec erat rutrum
-            rutrum. Mauris ligula magna, dignissim id tortor eu, aliquet dapibus ipsum</p>
-        </div>
-        <span class="datestamp">May 20, 2016, 4:16 PM</span>
-
-
-        <div class="bubble bubble-alt">
-          <p>Aenean ac magna rutrum, finibus est at, venenatis ipsum. Etiam egestas venenatis semper. Sed a neque sed sem lacinia
-            finibus ac nec nisi.</p>
-        </div>
-        <span class="datestamp  dt-alt">May 20, 2016, 4:17 PM</span>
-
-
-        <div class="bubble">
-          <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut facilisis justo in nisl elementum, at fermentum
-            augue tempor. </p>
-        </div>
-
-        <div class="bubble">
-          <p>Aliquam feugiat tortor ac massa commodo convallis sit amet ultricies urna. Sed pharetra augue ac sapien varius,
-            at vulputate velit pretium.</p>
-        </div>
-        <span class="datestamp">May 20, 2016, 4:20 PM</span>
-
-        <div class="bubble bubble-alt">
-          <p>Quisque sit amet nulla nibh. Mauris eu lacus sed orci rhoncus cursus nec et enim. Phasellus finibus luctus mi ac
-            sodales. Integer efficitur gravida mauris in eleifend. Maecenas ac interdum mi.</p>
-        </div>
-        <span class="datestamp  dt-alt">May 20, 2016, 4:22 PM</span>
+      <div class="chat-control">
+        <input class="chat-input" type="text" placeholder="enter your message" />
       </div>
     </div>
   </section>
@@ -390,16 +272,13 @@
 
   <div class="bottombottomtwo">
     <p class="m-0 text-center text-white">Copyright &copy; EZ TALK 2018</p>
-
-    <div class="chat-control">
-      <input class="chat-input" type="text" placeholder="enter your message" />
-    </div>
   </div>
-</section>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script src="js/index.js"></script>
   <script src="js/ajax.js"></script>
+
 
 
 
