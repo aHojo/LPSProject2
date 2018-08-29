@@ -24,6 +24,31 @@ body {
 
 /* beginning of landing page image */
 
+.card-title{
+  text-shadow: 0 0 120px #f32ca0;
+  /* Clip Background Image */
+  background: url(../images/strawmotion.jpg) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Animate Background Image */
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 80s linear infinite;
+  /* Activate hardware acceleration for smoother animations */
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animate Background Image */
+@-webkit-keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
 .githubportfolio{
   display: inline-block;
   padding: 6px 12px;
