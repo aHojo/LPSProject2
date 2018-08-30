@@ -37,6 +37,26 @@ $(document).ready(function () {
 
 	});
 
+	$(".submit").on("click", function() {
+		event.preventDefault();
+
+		var contact = {
+			name: $("#name").val().trim(),
+			number: $("#number").val().trim()
+		};
+
+		$("#name").val("");
+		$("#number").val("");
+		$.ajax({
+			url: "/api/storeNumber",
+			type: "POST",
+			data: contact
+		}).then(function (data) {
+			console.log(data);
+		});
+		
+	});
+
 	socket.on("text", function (call) {
 		console.log(call.messageBody);
 		console.log(call.from);
