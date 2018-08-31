@@ -1,7 +1,27 @@
 var socket = io();
 // io.connect('http://c98a1cd3.ngrok.io');
 $(document).ready(function () {
-
+	$.ajax({
+		url: "/api/contacts",
+		type: "GET"
+	}).then(function(data) {
+		var list = $("#inputGroupSelect01");
+		list.html("");
+		var option = $("<option>");
+		option.attr("selected");
+		option.html("Select A Contact To Currently Chat");
+		list.append(option);
+		console.log(data);
+		
+		options(data)
+			.then(function(data){
+				console.log(data);
+				for(var i = 0; i < data.length; i++) {
+					list.append(data[i]);
+				}
+			});
+	});
+	
 	$(".chat-input").on("keyup", function (event) {
 		if (event.keyCode === 13) {
 			var d = new Date();
@@ -37,6 +57,26 @@ $(document).ready(function () {
 
 	});
 
+	$(".submit").on("click", function() {
+		event.preventDefault();
+
+		var contact = {
+			name: $("#name").val().trim(),
+			number: $("#number").val().trim()
+		};
+
+		$("#name").val("");
+		$("#number").val("");
+		$.ajax({
+			url: "/api/storeNumber",
+			type: "POST",
+			data: contact
+		}).then(function (data) {
+			console.log(data);
+		});
+		
+	});
+
 	socket.on("text", function (call) {
 		console.log(call.messageBody);
 		console.log(call.from);
@@ -51,6 +91,22 @@ $(document).ready(function () {
 
 		showUI(newMessage);
 	});
+
+	function options(data) {
+		var options = [];
+		for(var i = 0; i < data.length; i++) {
+			var contacts = $("<option>");
+			contacts.attr("value", parseInt(i));
+			contacts.attr("data-name", data[i].name);
+			contacts.attr("data-number", data[i].number);
+			contacts.html("<a class=\"contValue\">" + data[i].name + " | " + data[i].number + "</a>");
+			options.push(contacts);
+		}
+
+		return new Promise(function(resolve, reject) {
+			resolve(options);
+		});
+	}
 
 });
 
