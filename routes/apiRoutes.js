@@ -5,19 +5,20 @@ var twilio = require('twilio');
 
 var returnRouter = function(io){
   router
-
     .get('/sendMessage', function(req, res) {
-      // var message = req.body
-      // var name = req.body.name;
-      // console.log(name);
-      // console.log(message);
-      // res.json(message);
+      var message = req.body
+      var name = req.body.name;
+      console.log(name);
+      console.log(message);
+      res.json(message);
 
-      db.Numbers.findAll({}).then(function(results) {
-        res.json(results);
-      })
     })
-
+    .get("/contacts", function(req, res) {
+		db.Numbers.findAll({}).then(function(results) {
+			res.json(results);
+		  })
+		
+    })
     .post("/sendMessage", function(req, res) {
       var message = req.body
       var name = req.body.name;
