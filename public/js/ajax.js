@@ -77,6 +77,8 @@ $(document).ready(function () {
 		
 	});
 
+	
+
 	socket.on("text", function (call) {
 		console.log(call.messageBody);
 		console.log(call.from);
@@ -95,11 +97,11 @@ $(document).ready(function () {
 	function options(data) {
 		var options = [];
 		for(var i = 0; i < data.length; i++) {
-			var contacts = $("<option>");
+			var contacts = $("<option class=\"contValue\">");
 			contacts.attr("value", parseInt(i));
 			contacts.attr("data-name", data[i].name);
 			contacts.attr("data-number", data[i].number);
-			contacts.html("<a class=\"contValue\">" + data[i].name + " | " + data[i].number + "</a>");
+			contacts.html(data[i].name + " | " + data[i].number);
 			options.push(contacts);
 		}
 
@@ -107,6 +109,6 @@ $(document).ready(function () {
 			resolve(options);
 		});
 	}
-
+	  
 });
 
