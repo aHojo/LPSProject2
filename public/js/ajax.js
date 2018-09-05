@@ -98,7 +98,28 @@ $(document).ready(function () {
 			$(".chat-header").append("<div class=\"user-profile\">" + "<h3 class=\"bubbleName\">" + names + "</h3>" + "</div>");
 		});
 
-		return new Promise(function (resolve, reject) {
+		$(".custom-select").change(function() {
+            var value = $(this).find("option:selected").attr("data-number");
+			console.log(value);
+
+			var names = $(this).find("option:selected").attr("data-name");
+			console.log(names);
+
+			$(".chat-header").append("<div class=\"user-profile\">" + "<h3 class=\"bubbleName\">" + names + "</h3>" + "</div>");
+			
+			$(".user-profile").attr({
+				"name" : names,
+				"number" : value
+			});
+
+			
+
+			
+
+
+		});
+		
+		return new Promise(function(resolve, reject) {
 			resolve(options);
 		});
 	}
