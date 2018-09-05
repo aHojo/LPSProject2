@@ -459,6 +459,19 @@ input.chat-input{
 
 }
 
+.bubbleName{
+  font-size: 12px;
+  padding-top: 30px;
+  display: inline;
+  float: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  letter-spacing: -0.3px;
+  
+  
+
+}
+
 .andrew{
   font-size: 12px;
   position: absolute;
@@ -470,6 +483,7 @@ input.chat-input{
   font-family: 'Roboto', sans-serif;
   font-weight: 200;
   letter-spacing: -0.3px;
+  padding-top: 12px;
 }
 .han{
   font-size: 12px;
@@ -482,6 +496,7 @@ input.chat-input{
   font-family: 'Roboto', sans-serif;
   font-weight: 200;
   letter-spacing: -0.3px;
+  padding-top: 12px;
 }
 .mike{
   font-size: 12px;
@@ -494,6 +509,7 @@ input.chat-input{
   font-family: 'Roboto', sans-serif;
   font-weight: 200;
   letter-spacing: -0.3px;
+  padding-top: 12px;
 }
 .zach{
   font-size: 12px;
@@ -506,7 +522,9 @@ input.chat-input{
   font-family: 'Roboto', sans-serif;
   font-weight: 200;
   letter-spacing: -0.3px;
+  padding-top: 12px;
 }
+
 
 .user-profile {
   width: 50px;
@@ -519,6 +537,7 @@ input.chat-input{
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   cursor: pointer;
+  margin-top: 15px;
 }
 .user-profile:hover {
   width: 50px;
