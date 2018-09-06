@@ -1,14 +1,14 @@
 $(document).ready(function () {
-	$(".user-profile").click(function () {
+	$(".chat-header").on("click", ".user-profile",function () {
 		if (!$(this).hasClass("active")) {
 
 			$(".user-profile.active").removeClass("active");
 			$(this).addClass("active");
 
-			var temp = $("#" + $(this).attr("data-name"));
+			var temp = $("#" + $(this).attr("data-number"));
 
 			hideUI(".chat-container");
-			showUI("#" + $(this).attr("data-name"));
+			showUI("#" + $(this).attr("data-number"));
 			temp.addClass("active").removeClass("hidechat");
 			temp.prevAll(".chat-container").addClass("hidechat").removeClass("active");
 			temp.nextAll(".chat-container").removeClass("active").removeClass("hidechat");
