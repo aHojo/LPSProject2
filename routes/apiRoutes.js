@@ -28,7 +28,7 @@ var returnRouter = function (io) {
 			var message = req.body.message;
 			var name = req.body.name;
 			var num = req.body.num;
-			console.log(message, num);
+			console.log(message, name, num);
 			client.messages.create({
 				body: message,
 				to: "+1" + num, // Text this number

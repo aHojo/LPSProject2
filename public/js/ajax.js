@@ -90,36 +90,32 @@ $(document).ready(function () {
 			contacts.html("<a class=\"contValue\">" + data[i].name + " | " + data[i].number + "</a>");
 			options.push(contacts);
 		}
+
+
 		$(".custom-select").change(function () {
 			var value = $(this).find("option:selected").attr("data-number");
 			console.log(value);
-			var names = $(this).find("option:selected").attr("data-name");
-			console.log(names);
-			$(".chat-header").append("<div class=\"user-profile\">" + "<h3 class=\"bubbleName\">" + names + "</h3>" + "</div>");
-		});
-
-		$(".custom-select").change(function() {
-            var value = $(this).find("option:selected").attr("data-number");
-			console.log(value);
 
 			var names = $(this).find("option:selected").attr("data-name");
 			console.log(names);
+			var chatHead = $(".chat-header");
+			var bubble = $("<div class=\"user-profile\">");
+			var bubbleName = $("<h3 class=\"bubbleName\">");
+			var chat = $("<div class=\"chat-container\">");
 
-			$(".chat-header").append("<div class=\"user-profile\">" + "<h3 class=\"bubbleName\">" + names + "</h3>" + "</div>");
-			
-			$(".user-profile").attr({
-				"name" : names,
-				"number" : value
+			bubble.attr({
+				"data-name": names,
+				"data-number": value
 			});
+			bubbleName.text(names);
+			bubble.append(bubbleName);
+			chatHead.append(bubble);
 
-			
-
-			
-
-
+			chat.attr("id", value);
+			$("#chat").append(chat);
 		});
-		
-		return new Promise(function(resolve, reject) {
+
+		return new Promise(function (resolve, reject) {
 			resolve(options);
 		});
 	}
