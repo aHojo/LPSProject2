@@ -64,7 +64,7 @@ $(document).ready(function () {
 			data: contact
 		}).then(function (data) {
 			console.log(data);
-
+			//Appends to option
 			addOption();
 			location.reload();
 
