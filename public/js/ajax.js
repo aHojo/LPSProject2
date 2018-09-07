@@ -12,7 +12,7 @@ $(document).ready(function () {
 		option.html("Select A Contact To Currently Chat");
 		list.append(option);
 		console.log(data);
-
+	
 		options(data)
 			.then(function (data) {
 				console.log(data);
@@ -64,6 +64,15 @@ $(document).ready(function () {
 			data: contact
 		}).then(function (data) {
 			console.log(data);
+			//Appends to option
+			addOption();
+			location.reload();
+
+			function addOption(){
+				var select = document.getElementById("inputGroupSelect01");
+				select.options[select.options.length] = new Option(data.name + "|" + data.number);
+			}
+
 		});
 
 	});
